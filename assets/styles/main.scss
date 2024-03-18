@@ -303,6 +303,10 @@ img {
     }
   }
 
+  &__img{
+    display: none;
+  }
+
   &__img-green, &__img-yellow {
     width: 10vw;
     height: 10vw;
@@ -860,12 +864,16 @@ img {
 
   .hero {
     &__title {
-      font-size: 30vh;
+      font-size: 25vh;
       letter-spacing: 1vh;
       grid-area: 1 / 2 / 11 / 12;
       display: flex;
       justify-content: center;
       flex-direction: column;
+    }
+
+    &__img{
+      display: block;
     }
   }
 
@@ -1034,6 +1042,9 @@ img {
 
 @include breakpoint(hd) {
   .hero {
+    &__title {
+      font-size: 30vh;
+    }
     &__arrow {
       width: 200px;
       height: 200px;

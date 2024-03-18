@@ -536,6 +536,9 @@ img {
 .hero__title span {
   display: block;
 }
+.hero__img {
+  display: none;
+}
 .hero__img-green, .hero__img-yellow {
   width: 10vw;
   height: 10vw;
@@ -1029,12 +1032,15 @@ img {
     justify-content: flex-start;
   }
   .hero__title {
-    font-size: 30vh;
+    font-size: 25vh;
     letter-spacing: 1vh;
     grid-area: 1/2/11/12;
     display: flex;
     justify-content: center;
     flex-direction: column;
+  }
+  .hero__img {
+    display: block;
   }
   .features .section-title {
     flex: 1 0 calc(50% - 48px);
@@ -1153,6 +1159,9 @@ img {
   }
 }
 @media only screen and (min-width: 1920px) {
+  .hero__title {
+    font-size: 30vh;
+  }
   .hero__arrow {
     width: 200px;
     height: 200px;
