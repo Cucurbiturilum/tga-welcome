@@ -338,6 +338,11 @@ body {
   color: #1b1b1b;
 }
 
+main {
+  max-width: 100vw;
+  overflow: hidden;
+}
+
 .container {
   position: relative;
   width: 100%;
@@ -456,6 +461,7 @@ img {
   font-weight: 500;
   line-height: 1;
   position: relative;
+  margin-bottom: 48px;
 }
 .section-title .highlighted {
   color: var(--hilighted-color);
@@ -515,7 +521,7 @@ img {
 }
 
 .hero {
-  height: 100vh;
+  height: 100svh;
   margin-top: -90px;
   position: relative;
   display: flex;
