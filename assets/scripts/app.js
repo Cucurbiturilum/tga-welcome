@@ -1,6 +1,9 @@
+
+
 document.addEventListener("DOMContentLoaded", function () {
 
-    gsap.registerPlugin(ScrollTrigger)
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(EasePack);
 
     /* Testimonials Slider */
     const testimonialsSwiper = new Swiper(".testimonials-slider", {
@@ -26,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     /* GSAP animation */
     let animationContainers = document.querySelectorAll('.animationContainer');
 
-    if(animationContainers.length > 0) {
+    if (animationContainers.length > 0) {
         animationContainers.forEach((section) => {
 
             let fadeInUpElements = section.querySelectorAll(".fadeInUp");
@@ -76,6 +79,51 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    //Hero
+    let heroSection = document.querySelector('.hero');
+    let heroImages = document.querySelectorAll('.hero__img');
+
+    if (heroSection) {
+        gsap.to('.hero__title-top', {
+            scrollTrigger: {
+                trigger: heroSection,
+                start: "top top",
+                scrub: 1,
+                toggleActions: "play pause play reverse",
+            },
+            duration: 0.3,
+            scale: 0.85,
+            ease: "expoScale(1, 2)"
+        })
+
+        gsap.to('.hero__title-bottom', {
+            scrollTrigger: {
+                trigger: heroSection,
+                start: "top top",
+                scrub: 1,
+                toggleActions: "play pause play reverse",
+            },
+            duration: 0.3,
+            scale: 1.1,
+            ease: "expoScale(1, 2)"
+        })
+
+        heroImages.forEach((image) => {
+            gsap.fromTo((image), {
+                    y: "-2vh",
+                    repeat: -1,
+                    yoyo: true,
+                    duration: 2,
+                },
+                {
+                    y: "2vh",
+                    repeat: -1,
+                    yoyo: true,
+                    duration: 2,
+                })
+        })
+    }
+
     //Ribbon
 
     let ribbonItems = document.querySelectorAll('.ribbon__item');
@@ -98,6 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, {
             rotationZ: 0,
             xPercent: -20,
+            duration: 1
         }, '<');
 
         tl.fromTo(ribbonItems[1], {
@@ -107,6 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, {
             rotationZ: 2,
             xPercent: 0,
+            duration: 1
         }, '<');
     }
 
@@ -117,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (quoteSections.length > 0) {
         quoteSections.forEach((section) => {
             gsap.to((section), {
-                scrollTrigger:{
+                scrollTrigger: {
                     trigger: section,
                     pin: '.about',
                     pinSpacing: false,

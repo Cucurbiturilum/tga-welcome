@@ -516,6 +516,7 @@ img {
 
 .hero {
   height: 100vh;
+  margin-top: -90px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -531,6 +532,37 @@ img {
   line-height: 1;
   font-size: 26vw;
   font-family: "Oswald", sans-serif;
+}
+.hero__title span {
+  display: block;
+}
+.hero__img-green, .hero__img-yellow {
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  background-color: #02C700;
+  grid-area: 3/7/5/9;
+  z-index: 4;
+  object-fit: cover;
+  overflow: hidden;
+}
+.hero__img-yellow {
+  grid-area: 5/3/7/4;
+  background-color: #ffcc48;
+}
+.hero__img-blue, .hero__img-purple {
+  background-color: #49a3f8;
+  height: 13vw;
+  width: 13vw;
+  border-radius: 50%;
+  grid-area: 6/9/8/12;
+  z-index: 4;
+  object-fit: cover;
+  overflow: hidden;
+}
+.hero__img-purple {
+  background-color: #bd7fee;
+  grid-area: 8/5/10/6;
 }
 .hero__note {
   font-size: 0.7em;
@@ -558,10 +590,11 @@ img {
   display: flex;
   position: absolute;
   top: auto;
-  bottom: 10vw;
+  bottom: 7vw;
   left: auto;
   right: 10vw;
   transition: all 0.3s ease;
+  z-index: 6;
 }
 .hero__arrow:hover {
   background-color: #ffcc48;
@@ -997,6 +1030,11 @@ img {
   }
   .hero__title {
     font-size: 30vh;
+    letter-spacing: 1vh;
+    grid-area: 1/2/11/12;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
   .features .section-title {
     flex: 1 0 calc(50% - 48px);
