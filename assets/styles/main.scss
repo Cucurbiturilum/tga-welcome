@@ -156,7 +156,6 @@ img {
   }
 }
 
-
 /* Components
 --------------------------------------------- */
 
@@ -293,6 +292,7 @@ img {
   margin-top: -90px;
   position: relative;
   @include flex-centered;
+
 
   &__title {
     text-align: center;
