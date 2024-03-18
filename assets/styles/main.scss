@@ -283,7 +283,7 @@ img {
 }
 
 .hero {
-  height: 100vh;
+  height: 100svh;
   margin-top: -90px;
   position: relative;
   @include flex-centered;
